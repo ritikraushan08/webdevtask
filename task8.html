@@ -1,0 +1,96 @@
+<!-- 9.
+Construct aEB Line registration form using the HTML5 and CSS
+with the following fields: Name, Address, Gender, Mobile Number,
+Phase required (Single, Three), and Connection type (Domestic,
+Commercial) are required. User can select any one type or both
+types. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EB Line Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        textarea,
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>EB Line Registration</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other" required>
+            <label for="other">Other</label>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <label>Phase Required:</label>
+            <input type="radio" id="singlePhase" name="phase" value="Single" required>
+            <label for="singlePhase">Single</label>
+            <input type="radio" id="threePhase" name="phase" value="Three" required>
+            <label for="threePhase">Three</label>
+
+            <label>Connection Type:</label>
+            <input type="checkbox" id="domestic" name="connection[]" value="Domestic">
+            <label for="domestic">Domestic</label>
+            <input type="checkbox" id="commercial" name="connection[]" value="Commercial">
+            <label for="commercial">Commercial</label>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>

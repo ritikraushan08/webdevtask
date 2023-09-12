@@ -1,0 +1,83 @@
+<!-- Develop the Employee Registration form with the following
+information:
+Student Name, Emp Number, Department, Year, Mobile Number,
+E-mail ID, Password
+Use Java Script event handling and form validation to display an
+error message using alert boxes whenever his EMP number is not 4
+digits, he forgot to fill in his name, department, and year, his
+mobile number is not 10 digits, and his email address and password
+are not in the correct format. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Registration</title>
+</head>
+<body>
+    <h2>Employee Registration Form</h2>
+    <form id="registrationForm">
+        <label for="name">Employee Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="empNumber">Emp Number:</label>
+        <input type="text" id="empNumber" name="empNumber" required><br><br>
+        
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required><br><br>
+        
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required><br><br>
+        
+        <label for="mobile">Employee Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required><br><br>
+        
+        <label for="email">E-mail ID:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            var empNumber = document.getElementById("empNumber").value;
+            var name = document.getElementById("name").value;
+            var department = document.getElementById("department").value;
+            var year = document.getElementById("year").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            
+            if (empNumber.length !== 4 || isNaN(empNumber)) {
+                alert("Emp Number must be exactly 4 digits.");
+                event.preventDefault();
+            }
+            
+            if (!name || !department || !year) {
+                alert("Please fill in Name, Department, and Year.");
+                event.preventDefault();
+            }
+            
+            if (mobile.length !== 10 || isNaN(mobile)) {
+                alert("Mobile Number must be exactly 10 digits.");
+                event.preventDefault();
+            }
+            
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid Email Address.");
+                event.preventDefault();
+            }
+            
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                alert("Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

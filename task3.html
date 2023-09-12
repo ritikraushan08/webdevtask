@@ -1,0 +1,82 @@
+<!-- Develop the Student Registration form with the following
+information:
+Student Name, VTU Number, Department, Year, Student Mobile
+Number, E-mail ID, Password
+Use Java Script event handling and form validation to display an
+error message using alert boxes whenever his VTU number is not 5
+digits, he forgot to fill in his name, department, and year, his
+mobile number is not 10 digits, and his email address and password are not in the correct format. -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Registration</title>
+</head>
+<body>
+    <h2>Student Registration Form</h2>
+    <form id="registrationForm">
+        <label for="name">Student Name:</label>
+        <input type="text" id="name" name="name" required><br><br>
+        
+        <label for="vtuNumber">VTU Number:</label>
+        <input type="text" id="vtuNumber" name="vtuNumber" required><br><br>
+        
+        <label for="department">Department:</label>
+        <input type="text" id="department" name="department" required><br><br>
+        
+        <label for="year">Year:</label>
+        <input type="text" id="year" name="year" required><br><br>
+        
+        <label for="mobile">Student Mobile Number:</label>
+        <input type="tel" id="mobile" name="mobile" required><br><br>
+        
+        <label for="email">E-mail ID:</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="Register">
+    </form>
+
+    <script>
+        document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            var vtuNumber = document.getElementById("vtuNumber").value;
+            var name = document.getElementById("name").value;
+            var department = document.getElementById("department").value;
+            var year = document.getElementById("year").value;
+            var mobile = document.getElementById("mobile").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            
+            if (vtuNumber.length !== 5 || isNaN(vtuNumber)) {
+                alert("VTU Number must be exactly 5 digits.");
+                event.preventDefault();
+            }
+            
+            if (!name || !department || !year) {
+                alert("Please fill in Name, Department, and Year.");
+                event.preventDefault();
+            }
+            
+            if (mobile.length !== 10 || isNaN(mobile)) {
+                alert("Mobile Number must be exactly 10 digits.");
+                event.preventDefault();
+            }
+            
+            var emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            if (!emailRegex.test(email)) {
+                alert("Invalid Email Address.");
+                event.preventDefault();
+            }
+            
+            var passwordRegex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            if (!passwordRegex.test(password)) {
+                alert("Password must contain at least 8 characters, including one uppercase letter, one lowercase letter, and one number.");
+                event.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

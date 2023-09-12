@@ -1,0 +1,90 @@
+<!-- Develop a home page for a Jewelers website using Bootstrap with
+Shop logo (use various image classes), Ornament names (use grid
+classes) and Various Models of struts (use various table classes). -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jeweler's Website</title>
+    <!-- Link to Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><img src="shop-logo.png" alt="Shop Logo" class="img-fluid logo"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Ornament Names -->
+    <div class="container mt-5">
+        <h2>Ornament Names</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <h3>Necklaces</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Rings</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+            <div class="col-md-4">
+                <h3>Earrings</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Various Models of Struts -->
+    <div class="container mt-5">
+        <h2>Various Models of Struts</h2>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Model</th>
+                    <th>Material</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Model 1</td>
+                    <td>Gold</td>
+                    <td>$500</td>
+                </tr>
+                <tr>
+                    <td>Model 2</td>
+                    <td>Silver</td>
+                    <td>$250</td>
+                </tr>
+                <tr>
+                    <td>Model 3</td>
+                    <td>Diamond</td>
+                    <td>$1000</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Link to Bootstrap JS and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

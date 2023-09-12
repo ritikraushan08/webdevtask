@@ -1,0 +1,95 @@
+<!-- Construct a student workshop registration form using the
+HTML5and CSS with the following fields: Name,
+Department,Gender, Mobile Number, City (Chennai, Bangalore,
+Hyderabad), and Webinar Title (Cloud, Big data) are required.
+Students can select any one title or both titles. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Workshop Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+        h2 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        input[type="text"],
+        input[type="tel"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Student Workshop Registration</h2>
+        <form action="#" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="department">Department:</label>
+            <input type="text" id="department" name="department" required>
+
+            <label>Gender:</label>
+            <input type="radio" id="male" name="gender" value="Male" required>
+            <label for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="Female" required>
+            <label for="female">Female</label>
+            <input type="radio" id="other" name="gender" value="Other" required>
+            <label for="other">Other</label>
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" name="mobile" required>
+
+            <label for="city">City:</label>
+            <select id="city" name="city" required>
+                <option value="Chennai">Chennai</option>
+                <option value="Bangalore">Bangalore</option>
+                <option value="Hyderabad">Hyderabad</option>
+            </select>
+
+            <label>Webinar Title:</label>
+            <input type="checkbox" id="cloud" name="webinar[]" value="Cloud">
+            <label for="cloud">Cloud</label>
+            <input type="checkbox" id="bigdata" name="webinar[]" value="Big Data">
+            <label for="bigdata">Big Data</label>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+</body>
+</html>
